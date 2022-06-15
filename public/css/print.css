@@ -1,0 +1,29 @@
+.table {
+  width: 100%;
+  padding: 4px 2px;
+  border:none;
+  /* font-size: 12px; */
+  font-family: 'BoonBaan';
+  color: #000000;
+}
+.table th{
+  font-family: 'BoonBaan';
+  color: #000000 !important;
+}
+.bill {
+  font-family: 'BoonBaan' !important;
+  color: black;
+
+}
+.card-header-icon>.logo {
+  height: 96px;
+  text-align: center;
+}
+.card-footer-item{
+justify-content: flex-end;
+align-items: flex-end;
+/* border-top: 1px solid #000; */
+}
+.card-content{
+padding: 0px;
+}
