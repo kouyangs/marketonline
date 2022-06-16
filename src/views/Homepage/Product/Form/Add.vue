@@ -259,11 +259,11 @@ export default {
   methods: {
     ValidForm() {
       this.SaveItem();
-      // this.$validator.validate().then(valid => {
-      //     if(valid){
-      //         this.SaveItem();
-      //     }
-      // });
+      this.$validator.validate().then(valid => {
+          if(valid){
+              this.SaveItem();
+          }
+      });
     },
 
     SaveItem() {
@@ -275,28 +275,28 @@ export default {
         .then(() => {
           this.value = "";
         });
-      // this.$axios.post('add/product', {
-      //     code_id: this.value.code_id,
-      //     barcode: this.value.barcode,
-      //     name: this.value.name,
-      //     amount: this.value.amount,
-      //     product_type_id: this.selectedProductType.id,
-      //     unit_id: this.selectedUnit.id,
-      //     description: this.value.description,
-      //     purchase_price: this.value.purchase_price,
-      //     sale_price: this.value.sale_price,
-      //     type: this.selectedType.id,
-      //     tax: this.value.tax,
-      //     have_discount: this.selectedHaveDiscount.id,
-      //     discount_min_price: this.value.discount_min_price,
-      //     discount_max_price: this.value.discount_max_price,
-      //     discount: this.value.discount,
-      //     discount_type: this.selectedDiscountType.id
-      // }).then(() => {
-      //     this.value = {};
-      //     this.FetchCategories();
-      //     this.FetchUnits();
-      // });
+      this.$axios.post('add/product', {
+          code_id: this.value.code_id,
+          barcode: this.value.barcode,
+          name: this.value.name,
+          amount: this.value.amount,
+          product_type_id: this.selectedProductType.id,
+          unit_id: this.selectedUnit.id,
+          description: this.value.description,
+          purchase_price: this.value.purchase_price,
+          sale_price: this.value.sale_price,
+          type: this.selectedType.id,
+          tax: this.value.tax,
+          have_discount: this.selectedHaveDiscount.id,
+          discount_min_price: this.value.discount_min_price,
+          discount_max_price: this.value.discount_max_price,
+          discount: this.value.discount,
+          discount_type: this.selectedDiscountType.id
+      }).then(() => {
+          this.value = {};
+          this.FetchCategories();
+          this.FetchUnits();
+      });
     },
 
     FetchCategories() {
