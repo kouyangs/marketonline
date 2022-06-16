@@ -15,6 +15,7 @@ import Unit from '../views/Homepage/Unit/index';
 import Color from '../views/Homepage/Color/index';
 import Size from '../views/Homepage/Size/index';
 import Rule from '../views/Homepage/Rule/index';
+import Product from '../views/Homepage/Product/index';
 
 
 Vue.use(VueRouter)
@@ -31,6 +32,15 @@ const routes = [
   },
 
   
+  {
+    path: '/Product',
+    name: 'Product',
+    component: Product,
+    meta: {
+      middleware: [Middlewares.auth],
+
+    }
+  },
   {
     path: '/Add',
     name: 'Add',

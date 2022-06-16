@@ -258,11 +258,10 @@ export default {
   },
   methods: {
     ValidForm() {
-      this.SaveItem();
       this.$validator.validate().then(valid => {
-          if(valid){
-              this.SaveItem();
-          }
+        if (valid) {
+          this.SaveItem();
+        }
       });
     },
 
@@ -275,7 +274,8 @@ export default {
         .then(() => {
           this.value = "";
         });
-      this.$axios.post('add/product', {
+      this.$axios
+        .post("add/product", {
           code_id: this.value.code_id,
           barcode: this.value.barcode,
           name: this.value.name,
@@ -292,11 +292,12 @@ export default {
           discount_max_price: this.value.discount_max_price,
           discount: this.value.discount,
           discount_type: this.selectedDiscountType.id
-      }).then(() => {
+        })
+        .then(() => {
           this.value = {};
           this.FetchCategories();
           this.FetchUnits();
-      });
+        });
     },
 
     FetchCategories() {

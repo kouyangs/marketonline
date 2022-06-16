@@ -30,7 +30,16 @@
             ຂໍ້ມູນ ສິນຄ້າ
           </vs-sidebar-item>
         </div>
-
+         
+           <div @click="GotoProduct()">
+          <vs-sidebar-item id="product">
+            <template #icon>
+              <i class="fal fa-flag-usa"></i>
+            </template>
+            ຂໍ້ມູນ ສິນຄ້າ
+          </vs-sidebar-item>
+        </div>
+         
 
         <div @click="GotoCountry()">
           <vs-sidebar-item id="country">
